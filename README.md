@@ -24,7 +24,7 @@ The repository structure follows the conceptual architecture of Snowplow, which 
 To briefly explain these six sub-systems:
 
 * **Trackers** fire Snowplow events. Currently we have 12 trackers, covering web, mobile, desktop, server and IoT
-* **Collectors** receive Snowplow events from trackers. Currently we have three different event collectors, sinking events either to Amazon S3, Apache Kafka or Amazon Kinesis
+* **Collectors** receive Snowplow events from trackers. Currently we have three different event collectors, synching events either to Amazon S3, Apache Kafka or Amazon Kinesis
 * **Enrich** cleans up the raw Snowplow events, enriches them and puts them into storage. Currently we have a Hadoop-based enrichment process, and a Kinesis- or Kafka-based process
 * **Storage** is where the Snowplow events live. Currently we store the Snowplow events in a flatfile structure on S3, and in the Redshift and Postgres databases
 * **Data modeling** is where event-level data is joined with other data sets and aggregated into smaller data sets, and business logic is applied. This produces a clean set of tables which make it easier to perform analysis on the data. We have data models for Redshift and **[Looker] [looker]**
